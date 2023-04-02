@@ -22,10 +22,21 @@
 }
 
 .contents{
+    display: flex;
     width: 1600px;
     height: 880px;
     background-color: var(--bg-contents);
     position: absolute;
     top: 30px;
     left: 160px;
+}
+
+.contacts{
+    width: 500px;
+    height: 100%;
+}
+
+.contact{
+    min-width: calc(100% - 500px);
+    height: 100%;
 }
