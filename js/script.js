@@ -194,7 +194,13 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            chatSelected: 0
+        }
+    },
+    methods: {
+        selectChat(i){
+            this.chatSelected = i;
         }
     }
 }).mount('#app');
