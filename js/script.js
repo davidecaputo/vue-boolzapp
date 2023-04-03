@@ -195,12 +195,23 @@ createApp({
                     ],
                 }
             ],
-            chatSelected: 0
+            chatSelected: 0,
+            messageSent: ''
         }
     },
     methods: {
         selectChat(i){
             this.chatSelected = i;
+        },
+        sendMessage(){
+            if(this.messageSent && this.messageSent !== ' '){
+                const newMessage = {
+                    message: this.messageSent,
+                    status: 'sent'
+                }
+                this.contacts[this.chatSelected].messages.push(newMessage);
+                this.messageSent = '';
+            }
         }
     }
 }).mount('#app');
