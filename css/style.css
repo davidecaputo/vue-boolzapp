@@ -49,9 +49,12 @@ i{
     height: 100%;
 }
 
-.contact{
-    min-width: calc(100% - 500px);
-    height: 100%;
+.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-right: 1px solid #d7d7d7;
 }
 
 .contacts img{
@@ -61,7 +64,7 @@ i{
 }
 
 .notifications{
-    padding: 22px 20px;
+    padding: 20px;
     background-color: var(--bg-notifications);
 }
 
@@ -93,6 +96,13 @@ i{
     border-bottom: 1px solid #f6f6f6;
 }
 
-.box-user:hover{
+.box-user:hover, .box-user.active{
     background-color: #e9ebeb;
+}
+
+/* contact */
+
+.contact{
+    min-width: calc(100% - 500px);
+    height: 100%;
 }
