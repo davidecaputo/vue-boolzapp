@@ -211,6 +211,13 @@ createApp({
                 }
                 this.contacts[this.chatSelected].messages.push(newMessage);
                 this.messageSent = '';
+                setTimeout(() => {
+                    const newMessageAuto = {
+                      message: 'Ciao',
+                      status: 'received'
+                    }
+                    this.contacts[this.chatSelected].messages.push(newMessageAuto);
+                  }, 2000)                  
             }
         }
     }
