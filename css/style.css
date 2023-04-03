@@ -131,6 +131,10 @@ input:focus{
     background-image: url(../img/mine.jpg);
 }
 
+.right-messages{
+    padding: 60px 100px;
+}
+
 .user-write input{
     height: 50px;
     border: 0px;
