@@ -67,12 +67,15 @@
                         </div>
                     </div>
                     <div class="chat">
-                        <div class="right-messages">
-                            <div class="sent">Hai portato a spasso il cane?</div>
-                            <div class="sent">Ricordati di stendere i panni</div>
-                            <div class="received">Tutto fatto!</div>
+                        <div class="right-messages" v-for="(textMessage, index) of contacts[chatSelected].messages" :key="index">
+                            <div class="sent" v-if="textMessage.status === 'sent'">
+                                <div>{{textMessage.message}}</div>
+                            </div>
+                            <div class="received" v-else>
+                                <div>{{textMessage.message}}</div>
+                            </div>
                         </div>
-                    </div>
+                      </div>
                     <div class="user-write justify-content-around">
                         <i class="fa-regular fa-face-smile" style="color: #6d7171;"></i>
                         <input type="text" class="w-75" placeholder="Scrivi un messaggio">

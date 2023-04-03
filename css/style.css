@@ -129,9 +129,6 @@ input:focus{
     height: calc(100% - 160px);
     overflow: auto;
     background-image: url(../img/mine.jpg);
-}
-
-.right-messages{
     padding: 60px 100px;
 }
 
