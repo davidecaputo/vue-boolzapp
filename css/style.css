@@ -51,6 +51,7 @@ input:focus{
 .contacts{
     min-width: 500px;
     height: 100%;
+    background-color: white;
 }
 
 .user, .user-chat, .user-write{
