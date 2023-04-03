@@ -135,6 +135,23 @@ input:focus{
     padding: 60px 100px;
 }
 
+.sent, .received{
+    width: 36%;
+    height: 100%;
+    margin: 15px 0px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.sent{
+    margin-left: auto;
+    background-color: #d5f9ba;
+}
+
+.received{
+    background-color: white;
+}
+
 .user-write input{
     height: 50px;
     border: 0px;
