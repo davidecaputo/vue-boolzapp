@@ -40,66 +40,12 @@
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
                     <div class="list-contacts">
-                        <div class="box-user active">
+                        <div class="box-user" v-for="(contact, index) of contacts" :key="contacts.id">
                             <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
+                                <img :src="contact.avatar" :alt="contact.name">
                             </div>
                             <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="box-user">
-                            <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="box-user">
-                            <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="box-user">
-                            <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="box-user">
-                            <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="box-user">
-                            <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
-                            </div>
-                        </div>
-                        <div class="box-user">
-                            <div class="user-image">
-                                <img src="./img/avatar_1.jpg" alt="">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">Michele</span>
+                                <span class="d-block fw-bold">{{contact.name}}</span>
                                 <span class="text-black-50">Ultimo messaggio inviato</span>
                             </div>
                         </div>
