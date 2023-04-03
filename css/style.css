@@ -49,7 +49,7 @@ i{
     height: 100%;
 }
 
-.user{
+.user, .user-chat{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +57,7 @@ i{
     border-right: 1px solid #d7d7d7;
 }
 
-.contacts img{
+.contacts img, .contact img{
     width: 60px;
     height: 100%;
     border-radius: 50%;
