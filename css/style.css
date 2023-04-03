@@ -2,6 +2,7 @@
     --bg-up: #009688;
     --bg-down: #dadbd3;
     --bg-contents: #eaeaea;
+    --bg-notifications: #8edafc;
 }
 
 .content{
@@ -49,7 +50,7 @@
 
 .notifications{
     padding: 22px 20px;
-    background-color: #8edafc;
+    background-color: var(--bg-notifications);
 }
 
 .bell{
