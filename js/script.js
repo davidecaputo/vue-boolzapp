@@ -195,11 +195,15 @@ createApp({
                     ],
                 }
             ],
+            notifications: false,
             chatSelected: 0,
             messageSent: ''
         }
     },
     methods: {
+        activeNotifications(){
+            this.notifications = true;
+        },
         selectChat(i){
             this.chatSelected = i;
         },

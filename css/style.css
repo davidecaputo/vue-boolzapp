@@ -69,6 +69,7 @@ input:focus{
 }
 
 .notifications{
+    display: flex;
     padding: 20px;
     background-color: var(--bg-notifications);
 }

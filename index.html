@@ -28,13 +28,13 @@
                             <i class="fa-solid fa-ellipsis-vertical pe-3" style="color: #b0b1b0;"></i>
                         </div>
                     </div>
-                    <div class="notifications d-flex">
+                    <div class="notifications" :class="{'d-none' : notifications}">
                         <div class="bell">
                             <i class="fa-solid fa-bell-slash" style="color: #8edafc;"></i>
                         </div>
                         <div class="ps-2">
                             <span class="d-block fw-bold">Ricevi notifiche di nuovi messaggi</span>
-                            <span class="text-decoration-underline">Attiva notifiche desktop</span>
+                            <span class="text-decoration-underline" @click="activeNotifications">Attiva notifiche desktop</span>
                         </div>
                     </div>
                     <div class="search-chat p-2 bg-body-tertiary">
