@@ -91,7 +91,7 @@
                         <i class="fa-regular fa-face-smile" style="color: #6d7171;"></i>
                         <input type="text" class="w-75" placeholder="Scrivi un messaggio" name="write-message" id="write-message" @keyup.enter="sendMessage" v-model="messageSent">
                         <i class="fa-solid fa-microphone" :class="!messageSent ? '' : 'd-none' " style="color: #6b7376;"></i>
-                        <i class="fa-regular fa-paper-plane" :class="messageSent ? '' : 'd-none' " style="color: #6b7376;"></i>
+                        <i class="fa-regular fa-paper-plane" :class="messageSent ? '' : 'd-none'" style="color: #6b7376;" @click="sendMessage"></i>
                     </div>
                 </div>
             </div>
