@@ -129,7 +129,8 @@ input:focus{
 .chat{
     width: 100%;
     height: calc(100% - 160px);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     background-image: url(../img/mine.jpg);
     padding: 60px 100px;
 }
@@ -162,6 +163,12 @@ input:focus{
 
 .arrow-down:hover{
     opacity: 1;
+}
+
+.dc-dropdown-menu{
+    position: absolute;
+    top: 34px;
+    left: 280px;
 }
 
 .user-write input{
