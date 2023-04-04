@@ -195,6 +195,7 @@ createApp({
                     ],
                 }
             ],
+            randomAnswer: ['Ciao', 'A dopo', 'Figurati', 'Faccio prima che posso', 'Tutto bene, tu?', 'Domani non posso', 'Okay', 'Mi sono fatto male alla spalla', 'Penso di riuscire ad esserci', 'Bisogna vedere il tempo', 'Hmmm, sinceramente preferisco una pizza', 'No, non ho studiato niente, se interrroga non vado', 'Secondo me dovresti chiedergli scusa, in fondo hai sbagliato tu', 'Se vieni io vengo', 'Poteva andare meglio', 'Grazie', 'Sì dai, adesso ci sono per una partita', 'Non mi funzionava internet per questo non ti ho risposto', 'Non ne avevo idea, corro subito a vedere, grazie', 'No, non credo riuscirò, sto troppo male', 'Io preferisco i giochi del PC sinceramente', 'Anch\'io adoro quel film, qual è la tua scena preferita?', 'A me piacciono di più i cani, tu cosa preferisci i cani o i gatti?', 'No, non seguo il calcio, tu?'],
             notifications: false,
             show: false,
             chatSelected: 0,
@@ -223,9 +224,11 @@ createApp({
                 }
                 this.contacts[this.chatSelected].messages.push(newMessage);
                 this.messageSent = '';
+                let messageAuto = Math.floor(Math.random() * (23 - 0 + 1) ) + 0;
                 setTimeout(() => {
+                    console.log(messageAuto);
                     const newMessageAuto = {
-                      message: 'Ciao',
+                      message: this.randomAnswer[messageAuto],
                       status: 'received'
                     }
                     this.contacts[this.chatSelected].messages.push(newMessageAuto);
