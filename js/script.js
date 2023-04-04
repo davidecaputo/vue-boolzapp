@@ -196,6 +196,7 @@ createApp({
                 }
             ],
             notifications: false,
+            show: false,
             chatSelected: 0,
             messageSent: ''
         }
@@ -203,6 +204,9 @@ createApp({
     methods: {
         activeNotifications(){
             this.notifications = true;
+        },
+        showDropdown(){
+            this.show = !this.show;
         },
         selectChat(i){
             this.chatSelected = i;
