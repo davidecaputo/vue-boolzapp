@@ -71,16 +71,16 @@
                         <div class="right-messages" v-for="(textMessage, index) of contacts[chatSelected].messages" :key="index">
                             <div class="sent" v-if="textMessage.status === 'sent'">
                                 <div>{{textMessage.message}}</div>
-                                <div class="arrow-down" @click="showDropdown"><i class="fa-solid fa-chevron-down" style="color: #b1b1b1;"></i></div>
-                                <ul class="dropdown-menu dc-dropdown-menu" :class="{'show' : show}">
+                                <div class="arrow-down" @click="messageDropdown(index)"><i class="fa-solid fa-chevron-down" style="color: #b1b1b1;"></i></div>
+                                <ul class="dropdown-menu dc-dropdown-menu" :class="[(index === indexMessage && dropDown)? 'show' : '']">
                                     <li><a class="dropdown-item" href="#">Info messaggio</a></li>
                                     <li><a class="dropdown-item" href="#">Elimina messaggio</a></li>
                                 </ul>
                             </div>
                             <div class="received" v-else>
                                 <div>{{textMessage.message}}</div>
-                                <div class="arrow-down" @click="showDropdown"><i class="fa-solid fa-chevron-down" style="color: #b1b1b1;"></i></div>
-                                <ul class="dropdown-menu dc-dropdown-menu" :class="{'show' : show}">
+                                <div class="arrow-down" @click="messageDropdown(index)"><i class="fa-solid fa-chevron-down" style="color: #b1b1b1;"></i></div>
+                                <ul class="dropdown-menu dc-dropdown-menu" :class="[(index === indexMessage && dropDown)? 'show' : '']">
                                     <li><a class="dropdown-item" href="#">Info messaggio</a></li>
                                     <li><a class="dropdown-item" href="#">Elimina messaggio</a></li>
                                 </ul>

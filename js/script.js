@@ -198,18 +198,22 @@ createApp({
             notifications: false,
             show: false,
             chatSelected: 0,
-            messageSent: ''
+            messageSent: '',
+            indexMessage: null,
+            dropDown: false
         }
     },
     methods: {
         activeNotifications(){
             this.notifications = true;
         },
-        showDropdown(){
-            this.show = !this.show;
-        },
         selectChat(i){
             this.chatSelected = i;
+            this.dropDown = false;
+        },
+        messageDropdown(i){
+            this.indexMessage = i;
+            this.dropDown = !this.dropDown;
         },
         sendMessage(){
             if(this.messageSent && this.messageSent !== ' '){
