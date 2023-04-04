@@ -38,16 +38,18 @@
                         </div>
                     </div>
                     <div class="search-chat p-2 bg-body-tertiary">
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="contentSearchChat" @keyup="searchChat">
                     </div>
                     <div class="list-contacts">
-                        <div class="box-user" :class="{ 'active': chatSelected === index }" v-for="(contact, index) of contacts" :key="contacts.id" @click="selectChat(index)">
-                            <div class="user-image">
-                                <img :src="contact.avatar" :alt="contact.name">
-                            </div>
-                            <div class="text-user ps-3">
-                                <span class="d-block fw-bold">{{contact.name}}</span>
-                                <span class="text-black-50">Ultimo messaggio inviato</span>
+                        <div v-for="(contact, index) of contacts" :key="contacts.id" @click="selectChat(index)">
+                            <div class="box-user" :class="{ 'active': chatSelected === index }" v-if="contact.visible">
+                                <div class="user-image">
+                                    <img :src="contact.avatar" :alt="contact.name">
+                                </div>
+                                <div class="text-user ps-3">
+                                    <span class="d-block fw-bold">{{contact.name}}</span>
+                                    <span class="text-black-50">Ultimo messaggio inviato</span>
+                                </div>
                             </div>
                         </div>
                     </div>

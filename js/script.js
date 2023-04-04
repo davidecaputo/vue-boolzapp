@@ -197,7 +197,7 @@ createApp({
             ],
             randomAnswer: ['Ciao', 'A dopo', 'Figurati', 'Faccio prima che posso', 'Tutto bene, tu?', 'Domani non posso', 'Okay', 'Mi sono fatto male alla spalla', 'Penso di riuscire ad esserci', 'Bisogna vedere il tempo', 'Hmmm, sinceramente preferisco una pizza', 'No, non ho studiato niente, se interrroga non vado', 'Secondo me dovresti chiedergli scusa, in fondo hai sbagliato tu', 'Se vieni io vengo', 'Poteva andare meglio', 'Grazie', 'Sì dai, adesso ci sono per una partita', 'Non mi funzionava internet per questo non ti ho risposto', 'Non ne avevo idea, corro subito a vedere, grazie', 'No, non credo riuscirò, sto troppo male', 'Io preferisco i giochi del PC sinceramente', 'Anch\'io adoro quel film, qual è la tua scena preferita?', 'A me piacciono di più i cani, tu cosa preferisci i cani o i gatti?', 'No, non seguo il calcio, tu?'],
             notifications: false,
-            show: false,
+            contentSearchChat : '',
             chatSelected: 0,
             messageSent: '',
             indexMessage: null,
@@ -208,13 +208,14 @@ createApp({
         activeNotifications(){
             this.notifications = true;
         },
+        searchChat(){
+            this.contacts.forEach(contact => {
+                contact.visible = contact.name.includes(this.contentSearchChat.toUpperCase());
+            });
+        },
         selectChat(i){
             this.chatSelected = i;
             this.dropDown = false;
-        },
-        messageDropdown(i){
-            this.indexMessage = i;
-            this.dropDown = !this.dropDown;
         },
         sendMessage(){
             if(this.messageSent && this.messageSent !== ' '){
@@ -232,8 +233,12 @@ createApp({
                       status: 'received'
                     }
                     this.contacts[this.chatSelected].messages.push(newMessageAuto);
-                  }, 2000)                  
+                }, 2000)                  
             }
+        },
+        messageDropdown(i){
+            this.indexMessage = i;
+            this.dropDown = !this.dropDown;
         }
     }
 }).mount('#app');
