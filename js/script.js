@@ -241,6 +241,10 @@ createApp({
         messageDropdown(i){
             this.indexMessage = i;
             this.dropDown = !this.dropDown;
+        },
+        deleteMessage(i){
+            this.contacts[this.chatSelected].messages.splice(i, 1);
+            this.dropDown = false;
         }
     }
 }).mount('#app');
