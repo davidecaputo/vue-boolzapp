@@ -16,7 +16,9 @@
             <div class="background-up"></div>
             <div class="background-down"></div>
             <div class="contents">
+                <!-- contenitore dei contatti nella parte di sinistra -->
                 <div class="contacts">
+                    <!-- contenitore utente principale -->
                     <div class="user">
                         <div>
                             <img src="./img/avatar_8.jpg" alt="me">
@@ -28,6 +30,7 @@
                             <i class="fa-solid fa-ellipsis-vertical pe-3" style="color: #b0b1b0;"></i>
                         </div>
                     </div>
+                    <!-- contenitore notifiche -->
                     <div class="notifications" :class="{'d-none' : notifications}">
                         <div class="bell">
                             <i class="fa-solid fa-bell-slash" style="color: #8edafc;"></i>
@@ -37,12 +40,14 @@
                             <span class="text-decoration-underline" @click="activeNotifications">Attiva notifiche desktop</span>
                         </div>
                     </div>
+                    <!-- contenitore per ricerca contatto -->
                     <div class="search-chat p-2 bg-body-tertiary">
                         <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="contentSearchChat" @keyup="searchChat">
                     </div>
+                    <!-- contenitore lista contatti -->
                     <div class="list-contacts">
                         <div v-for="(contact, index) of contacts" :key="contacts.id" @click="selectChat(index)">
-                            <div class="box-user" :class="{ 'active': chatSelected === index }" v-if="contact.visible">
+                            <div class="box-user" :class="{ 'active': chatSelected === index && start === false }" v-if="contact.visible">
                                 <div class="user-image">
                                     <img :src="contact.avatar" :alt="contact.name">
                                 </div>
@@ -54,7 +59,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- contenitore del contatto nella parte di destra -->
                 <div class="contact">
+                    <!-- contenitore pagina visualizzata all'apertura dell'app -->
+                    <div class="startPage" v-if="start === true">
+                        <img src="./img/start-image.png" alt="">
+                        <span class="fs-2">WhatsApp Web</span>
+                        <span class="text-center w-50">Invia e ricevi messaggi senza mantere il telefono connesso a Internet. Usa WhatsApp su un massimo di 4 dispositivi collegati e 1 telefono contemporaneamente</span>
+                    </div>
+                    <!-- contenitore utente selezionato -->
                     <div class="user-chat">
                         <div class="d-flex justify-content-center align-content-center">
                             <img :src="contacts[chatSelected].avatar" :alt="contacts[chatSelected].name">
@@ -69,6 +82,7 @@
                             <i class="fa-solid fa-ellipsis-vertical ps-3" style="color: #b1b1b1;"></i>
                         </div>
                     </div>
+                    <!-- contenitore chat -->
                     <div class="chat">
                         <div class="right-messages" v-for="(textMessage, index) of contacts[chatSelected].messages" :key="index">
                             <div class="sent" v-if="textMessage.status === 'sent'">
@@ -88,7 +102,8 @@
                                 </ul>
                             </div>
                         </div>
-                      </div>
+                    </div>
+                    <!-- contenitore per inserimento di nuovo messaggio -->
                     <div class="user-write justify-content-around">
                         <i class="fa-regular fa-face-smile" style="color: #6d7171;"></i>
                         <input type="text" class="w-75" placeholder="Scrivi un messaggio" name="write-message" id="write-message" @keyup.enter="sendMessage" v-model="messageSent">

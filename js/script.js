@@ -201,7 +201,8 @@ createApp({
             chatSelected: 0,
             messageSent: '',
             indexMessage: null,
-            dropDown: false
+            dropDown: false,
+            start: true
         }
     },
     methods: {
@@ -210,12 +211,13 @@ createApp({
         },
         searchChat(){
             this.contacts.forEach(contact => {
-                contact.visible = contact.name.includes(this.contentSearchChat.toUpperCase());
-            });
+                contact.visible = contact.name.toUpperCase().includes(this.contentSearchChat.toUpperCase());
+            })
         },
         selectChat(i){
             this.chatSelected = i;
             this.dropDown = false;
+            this.start = false;
         },
         sendMessage(){
             if(this.messageSent && this.messageSent !== ' '){
